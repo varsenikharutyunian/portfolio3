@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>This is my resume</title>
+    <style>
+        body {
+            background-color: rgb(216, 187, 149);
+            color: rgb(7, 7, 8);
+        }
+        img {
+            width: 25%;
+            border-radius: 75px;
+            border-style: double;
+            border-color: rgb(65, 207, 101);
+        }
+        section {
+            color: blue;
+        }
+        h1 {
+            color: rgb(105, 105, 225);
+            text-align: center;
+        }
+        hr {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+    <div class="photo-and-name">
+    
+    <img src="https://scontent.fevn12-1.fna.fbcdn.net/v/t39.30808-6/358533706_9485792828160646_4998383725948006106_n.jpg?_nc_cat=111&cb=99be929b-3346023f&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeE_L7MTJRR-F08dNfsKsEBuSMtPowAdZrNIy0-jAB1ms4-KrCn6_QCk7-lIUBoloyR6NoDMxg_qF-WFOAqvKgLQ&_nc_ohc=fmfKMIUZB2gAX_547dl&_nc_ht=scontent.fevn12-1.fna&oh=00_AfCmlGnHEqfp00YbmQA_ogZhL6NWyt2D6nU3WUGZr-XPLg&oe=64AE43A4" alt="my picture">
+    
+    <h1> {{name}} {{surename}}</h1>
+    <div class="section">
+    <section><b>Contact</b></section>
+    <section><b><a href="mailto:varsikharutyunyan72@gmail.com">{{email}}</a></b></section>
+    <section><b>{{phone}}</b></section>
+    <section><b><a href="https://www.facebook.com/">{{social1}}</a></b></section>
+    <section><b><a href="https://www.instagram.com/">{{social2}}</a></b></section>
+    </div>
+    <div class="name">
+        <hr>
+        <section id="abaut">
+        <h2>Abaut Me</h2>
+        <p>{{about_me}}</p>
+        <hr>
+        
+<section it ="education">
+        <h2>Education</h2>
+        <hr>
+        <ol>
+            <li>
+            <p>{{education1}}.</p>
+            </li>
+            <li>
+            <p>{{education2}}</p>
+        </li>
+    </ol>
+</div >
+    <section id="resume">
+
+    <h2>Resume</h2>
+    {%for i in experience%}
+        <div class="resume-item">
+            <h3>{{i.jobe_title}} {{i.company}} {{i.period}}</h3>
+        </div>
+    {% endfor %}
+    <hr>
+
+    <section id ="language">
+    <h2>Languages</h2>
+    <hr>
+    <ol>
+        <h3>{{language1}}</h3>
+        <h3>{{language2}}</h3>
+        <h3>{{language3}}</h3>
+        <h3>{{language4}}</h3>
+    </ol>
+</div>
+
+<section id="skills">
+  <hr>  
+    <h2>Technical Skills</h2>
+    <hr>
+    <ol>
+        <h3>{{skills1}}</h3>
+        <h3>{{skills2}}</h3>
+        <h3>{{skils3}}</h3>
+        <h3>{{skils4}}</h3>
+        <h3>Python</h3>
+    </ol>
+</section>
+<hr>
+    
+<section id="Skills">
+    <h2>Skills</h2>
+    <hr>
+    
+    <ol>
+        <h3>{{Skills1}}</h3>
+        <h3>{{Skills2}}</h3>
+        <h3>{{Skills3}}</h3>
+        <h3>{{Skills4}}</h3>
+        <h3>{{Skills5}}</h3>
+    </ol>
+</section>
+</body>
+</html> 
