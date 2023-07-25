@@ -1,5 +1,8 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 class Skill(models.Model):
@@ -86,4 +89,7 @@ class Courses(models.Model):
         return f'{self.cours_name}'
             
 
+class Personalinfo(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    short_description =models.TextField()
     

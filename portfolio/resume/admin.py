@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  Skill, Education,Experience,Language,Courses,Service
+from .models import  Skill, Education,Experience,Language,Courses,Service,Personalinfo
 
 
 class EducationAdmin(admin.ModelAdmin):
@@ -33,7 +33,9 @@ class TestimonialsAdmin(admin.ModelAdmin):
 
 class ServicekAdmin(admin.ModelAdmin):
     list_display = ["service_name", "service_description"]
-
+    
+class ServicekAdmin(admin.ModelAdmin):
+    list_display = ["service_name", "service_description"]
 
 
 
@@ -45,6 +47,7 @@ admin.site.register(Language,LanguageAdmin)
 # admin.site.register(Testimonials,TestimonialsAdmin)
 admin.site.register(Service, ServicekAdmin)
 admin.site.register(Courses)
+admin.site.register(Personalinfo)
 
 
 

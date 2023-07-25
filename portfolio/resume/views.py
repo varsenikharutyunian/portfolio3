@@ -46,6 +46,7 @@ def home(request):
     courses = Courses.objects.all()
     services = Service.objects.all()
     # testimonials = Testimonials.objects.all()
+    personal_info = PersonalInfo.objects.get(user_username = "varsenikharutyunyan")
     
     data={"first_name":"VARSENIK",
         "last_name":"HARUTYUNYAN",
@@ -58,6 +59,7 @@ def home(request):
         'city': "Ashtarak,Bazmaghbyur, RA",
         "title": "Portfolio Varsenik Harutyunyan",
         "degree": "Junior",
+        
                                             
         # 'linkdin': 'https://www.linkedin.com/in/avagyani',
         # 'skype': 'https://join.skype.com/invite/M0yS4sB2gOvL',
@@ -73,5 +75,6 @@ def home(request):
         "language": language, 
         "services": services,
         # "testimonials": testimonials,
+        "personal_info":personal_info
                                             }
     return render(request,"index.html",context=data)
