@@ -39,7 +39,7 @@ def portfolio(request):
 
 
 def home(request):
-    skills=Skill.objects.all()
+    skills=Skill.objects.filter(user__username= "varsik")
     education = Education.objects.all()
     experience = Experience.objects.all()
     language = Language.objects.all()
