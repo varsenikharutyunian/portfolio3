@@ -9,6 +9,7 @@ class Skill(models.Model):
     name = models.TextField(max_length=30)
     value = models.PositiveIntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)], default=1)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     def __str__(self) -> str:
         
         return f"{self.name} skill value is {self.value}"
