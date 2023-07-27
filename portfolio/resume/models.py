@@ -89,7 +89,15 @@ class Courses(models.Model):
         return f'{self.cours_name}'
             
 
-class Personalinfo(models.Model):
+class PersonalInfo(models.Model):
+    website = models.URLField(max_length = 200)
+    phone = models.CharField(max_length=30)  
+    city = models.CharField(max_length=30)
+    age = models.PositiveIntegerField()
+    degree = models.CharField(max_length=30)
+    freelance = models.CharField(max_length=30)
+    birthday = models.DateField()
+    email = models.EmailField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    short_description =models.TextField()
     
+

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import (Skill,Education,Language,Courses,Experience,Service)
+from .models import (Skill,Education,Language,Courses,Experience,Service,PersonalInfo)
 
 # Create your views here.
 def portfolio(request):
@@ -46,13 +46,14 @@ def home(request):
     courses = Courses.objects.all()
     services = Service.objects.all()
     # testimonials = Testimonials.objects.all()
-    personal_info = PersonalInfo.objects.get(user_username = "varsenikharutyunyan")
+    personal_info = PersonalInfo.objects.get(user__username = "varsik")
     
-    data={"first_name":"VARSENIK",
-        "last_name":"HARUTYUNYAN",
+    data={
+        # "first_name":"VARSENIK",
+        # "last_name":"HARUTYUNYAN",
         "address": "RA, Bazmaghbyur avenue 3/5",
         "phone": "+37493912442",
-        "web": "http://127.0.0.1:8000/",
+        "web": "varsikharutyunyan.pythonanywhere.com",
         "email":"varsikharutyunyan72@gmail.com",
         "age": "50",
         "birthday": "02 Nov 1972",
@@ -75,6 +76,7 @@ def home(request):
         "language": language, 
         "services": services,
         # "testimonials": testimonials,
-        "personal_info":personal_info
+        "personal_info":personal_info,
                                             }
+    
     return render(request,"index.html",context=data)
