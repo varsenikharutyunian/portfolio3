@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from .models import (Skill,Education,Language,Courses,Experience,Service,PersonalInfo)
+from .forms import MessageForm
 
 # Create your views here.
 def portfolio(request):
@@ -39,6 +40,20 @@ def portfolio(request):
 
 
 def home(request):
+    
+    status = 200
+
+    if request.method == "POST":
+        print("POSTED DATA")
+        print(request.POST)
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            status = 201
+        else:
+            print("TELL them that sent data is not valid")
+    
+    
     skills=Skill.objects.filter(user__username= "varsik")
     education = Education.objects.all()
     experience = Experience.objects.all()
@@ -47,19 +62,21 @@ def home(request):
     services = Service.objects.all()
     # testimonials = Testimonials.objects.all()
     personal_info = PersonalInfo.objects.get(user__username = "varsik")
+    messageForm = MessageForm()
+    
     
     data={
         # "first_name":"VARSENIK",
         # "last_name":"HARUTYUNYAN",
-        "address": "RA, Bazmaghbyur avenue 3/5",
-        "phone": "+37493912442",
-        "web": "varsikharutyunyan.pythonanywhere.com",
-        "email":"varsikharutyunyan72@gmail.com",
-        "age": "50",
-        "birthday": "02 Nov 1972",
-        'city': "Ashtarak,Bazmaghbyur, RA",
-        "title": "Portfolio Varsenik Harutyunyan",
-        "degree": "Junior",
+        # "address": "RA, Bazmaghbyur avenue 3/5",
+        # "phone": "+37493912442",
+        # "web": "varsikharutyunyan.pythonanywhere.com",
+        # "email":"varsikharutyunyan72@gmail.com",
+        # "age": "50",
+        # "birthday": "02 Nov 1972",
+        # 'city': "Ashtarak,Bazmaghbyur, RA",
+        # "title": "Portfolio Varsenik Harutyunyan",
+        # "degree": "Junior",
         
                                             
         # 'linkdin': 'https://www.linkedin.com/in/avagyani',
@@ -77,6 +94,7 @@ def home(request):
         "services": services,
         # "testimonials": testimonials,
         "personal_info":personal_info,
-                                            }
+        "messageForm": messageForm,
+        }
     
-    return render(request,"index.html",context=data)
+    return render(request,"index.html",context=data,status=status)

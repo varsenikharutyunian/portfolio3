@@ -100,5 +100,11 @@ class PersonalInfo(models.Model):
     birthday = models.DateField()
     email = models.EmailField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    
 
+
+
+class Message(models.Model):
+    full_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField(max_length=1000)
