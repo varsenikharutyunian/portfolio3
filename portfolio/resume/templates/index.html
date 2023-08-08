@@ -326,8 +326,30 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          {% for pproject in portfolio_projects %}
+          <div
+            class="col-lg-4 col-md-6 portfolio-item filter-{{pproject.category}}"
+          >
+            <div class="portfolio-wrap">
+              <img src="{{pproject.image.url}}" class="img-fluid" alt="" />
+              <div class="portfolio-info">
+                <h4>{{pproject.name}}</h4>
+                <p>{{pproject.short_description}}</p>
+                <div class="portfolio-links">
+                  <a
+                    href="{% url 'portfolio_project' pproject.id %}"
+                    title="Portfolio Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>  
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          {% comment %} <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -339,9 +361,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          {% comment %} <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -353,9 +375,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          {% comment %} <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -367,8 +389,8 @@
                 </div>
               </div>
             </div>
-          </div>
-
+          </div> {% endcomment %}
+{% comment %} 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
@@ -381,9 +403,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          {% comment %} <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -395,9 +417,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          {% comment %} <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -409,9 +431,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          {% comment %} <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -425,8 +447,8 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card"> {% endcomment %}
+            {% comment %} <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Card 3</h4>
@@ -437,9 +459,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          {% comment %} <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -455,7 +477,7 @@
 
         </div>
 
-      </div>
+      </div> {% endcomment %}
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Services Section ======= -->
@@ -493,7 +515,7 @@
           <p>It takes great pains to benefit. His needs result from something that actually drives him away. Let them be what they want. Anyone whom anyone desires. And no one who hinders receives the others. Because he should flee in this office of convenience, which is here.</p>
         </div>
 
-         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <di class="swiper-wrapper">
             {% for i in testimonial %}
             <div class="swiper-slide">

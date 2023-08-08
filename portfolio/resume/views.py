@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import (Skill,Education,Language,Courses,Experience,Service,PersonalInfo,Testimonials)
+from .models import Skill,Education,Language,Courses,Experience,Service,PersonalInfo,Testimonials,PortfolioProject
 from .forms import MessageForm
 from django.shortcuts import get_object_or_404
 
@@ -64,6 +64,7 @@ def home(request):
     testimonial = Testimonials.objects.all()
     personal_info = PersonalInfo.objects.get(user__username = "varsik")
     messageForm = MessageForm()
+    portfolio_project = PortfolioProject.objects.all()
     
     
     data={
@@ -96,6 +97,7 @@ def home(request):
         "testimonial": testimonial,
         "personal_info":personal_info,
         "messageForm": messageForm,
+        "portfolio_project": portfolio_project,
         }
     
     return render(request,"index.html",context=data,status=status)
