@@ -1,39 +1,40 @@
 from django.shortcuts import render
-# from django.http import HttpResponse
-from .models import (Skill,Education,Language,Courses,Experience,Service,PersonalInfo)
+
+from .models import (Skill,Education,Language,Courses,Experience,Service,PersonalInfo,Testimonials)
 from .forms import MessageForm
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
-def portfolio(request):
-    return render(request,"portfolio.html",
-                    context={"name":"VARSENIK",
-                            "surename":"HARUTYUNYAN",
-                            "phone":"+37493912442",
-                            "email":"varsikharutyunyan72@gmail.com",
-                            "social1":"facebook.com",
-                            "social2":"instagran.com",
-                            "language1":"Armenian (native)",
-                            "language2":"Russian",
-                            "language3":"English",
-                            "language4":"Franse",
-                            "skills1":"Linux",
-                            "skills2":"HTML/CSS",
-                            "skills3":"Python",
-                            "skills4":"Django",
-                            "Skills1":"Teaching ability",
-                            "Skills2":"Team working",
-                            "Skills3":"Analytical thinking",
-                            "Skills4":"Mathematical thinking",
-                            "Skills5":"Proper management of time",
+# def portfolio(request):
+#     return render(request,"portfolio.html",
+#                     context={"name":"VARSENIK",
+#                             "surename":"HARUTYUNYAN",
+#                             "phone":"+37493912442",
+#                             "email":"varsikharutyunyan72@gmail.com",
+#                             "social1":"facebook.com",
+#                             "social2":"instagran.com",
+#                             "language1":"Armenian (native)",
+#                             "language2":"Russian",
+#                             "language3":"English",
+#                             "language4":"Franse",
+#                             "skills1":"Linux",
+#                             "skills2":"HTML/CSS",
+#                             "skills3":"Python",
+#                             "skills4":"Django",
+#                             "Skills1":"Teaching ability",
+#                             "Skills2":"Team working",
+#                             "Skills3":"Analytical thinking",
+#                             "Skills4":"Mathematical thinking",
+#                             "Skills5":"Proper management of time",
                             
-                            "about_me":"""Hello. I am a teacher.ince 1993, I have been working as a physics and mathematics teacher.I live in Bazmaghbyur village.Now I'm learning Python programming.I am married, I have a daughter and a son.""",         
+#                             "about_me":"""Hello. I am a teacher.ince 1993, I have been working as a physics and mathematics teacher.I live in Bazmaghbyur village.Now I'm learning Python programming.I am married, I have a daughter and a son.""",         
                             
-                            "education1":"1990-1996, Armenian State University of Engineering Radio Engineering Department",
-                            "education2":"2005-2008, Armenian State Pedagogical University AF. KH. Abovyan.",
-                            "experience":[
-                                {"jobe_title":"teacher","company":"Shcools","period":"1993-Courent"},
-                                {"jobe_title":"Python junior developer","company":"XYZ", "period":"2023-Courent"},
-                            ]})
+#                             "education1":"1990-1996, Armenian State University of Engineering Radio Engineering Department",
+#                             "education2":"2005-2008, Armenian State Pedagogical University AF. KH. Abovyan.",
+#                             "experience":[
+#                                 {"jobe_title":"teacher","company":"Shcools","period":"1993-Courent"},
+#                                 {"jobe_title":"Python junior developer","company":"XYZ", "period":"2023-Courent"},
+#                             ]})
 
 
 
@@ -60,7 +61,7 @@ def home(request):
     language = Language.objects.all()
     courses = Courses.objects.all()
     services = Service.objects.all()
-    # testimonials = Testimonials.objects.all()
+    testimonial = Testimonials.objects.all()
     personal_info = PersonalInfo.objects.get(user__username = "varsik")
     messageForm = MessageForm()
     
@@ -92,9 +93,13 @@ def home(request):
         "experience": experience,
         "language": language, 
         "services": services,
-        # "testimonials": testimonials,
+        "testimonial": testimonial,
         "personal_info":personal_info,
         "messageForm": messageForm,
         }
     
     return render(request,"index.html",context=data,status=status)
+
+def portfolio_project(request, id):
+    project = get_object_or_404(PortfolioProject, id=id)
+    return render(request, "portfolio-details.html", context={"project": project})

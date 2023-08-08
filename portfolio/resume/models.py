@@ -47,20 +47,18 @@ class Experience(models.Model):
 #         return f"{self.platform_name} account"
     
 
-# class Testimonial(models.Model):
-#     name = models.TextField()
-#     proffesion = models.TextField()
-#     text = models.TextField()
-#     image =models.ImageField()
+class Testimonials(models.Model):
+    full_name = models.TextField(max_length=30)
+    position = models.TextField(max_length=70)
+    testimonial = models.TextField(max_length=300)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    link = models.URLField(blank=True, null=True)
     
-#     def __str__(self) -> str:
-#         return f"{self.name} - {self.proffesion}"
-# class Testimonials(models.Model):
-#     full_name = models.TextField(max_length=30)
-#     position = models.TextField(max_length=70)
-#     testimonial = models.TextField(max_length=300)
-#     image = models.ImageField(upload_to='images/', null=True, blank=True)
-#     link = models.URLField(blank=True, null=True)
+
+    def __str__(self) -> str:
+        return f"Name - {self.full_name}"
+    
+
 
     
     
