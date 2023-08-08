@@ -127,6 +127,39 @@
         }
     },
     {
+        "model": "resume.testimonials",
+        "pk": 1,
+        "fields": {
+            "full_name": "Suren Abrahamyan",
+            "position": "Python Developer",
+            "testimonial": "I wish you success in your new profession.",
+            "image": "images/testimonials-1.jpg",
+            "link": null
+        }
+    },
+    {
+        "model": "resume.testimonials",
+        "pk": 2,
+        "fields": {
+            "full_name": "Lilit Gyozalyan",
+            "position": "Teaser, \"ARMATH\" group leader.",
+            "testimonial": "Msr. Harutyunyan is a good teacher,hardworking and knowledgeable colleague.He loves to learn and teach.I think that the  profession of programmer will open a new chapter in his life.",
+            "image": "images/testimonials-2.jpg",
+            "link": null
+        }
+    },
+    {
+        "model": "resume.testimonials",
+        "pk": 3,
+        "fields": {
+            "full_name": "Martin Barseghyan",
+            "position": "Web Developer,",
+            "testimonial": "I wish him a successful and good job in the programming profession.",
+            "image": "images/testimonials5.jpg",
+            "link": null
+        }
+    },
+    {
         "model": "resume.service",
         "pk": 1,
         "fields": {
@@ -217,6 +250,69 @@
             "birthday": "1972-11-02",
             "email": "varsikharutyunyan72@gmail.com",
             "user": 1
+        }
+    },
+    {
+        "model": "resume.message",
+        "pk": 1,
+        "fields": {
+            "full_name": "varsik",
+            "email": "varsikharutyunyan72@gmail.com",
+            "subject": "fff",
+            "message": "ss"
+        }
+    },
+    {
+        "model": "resume.message",
+        "pk": 2,
+        "fields": {
+            "full_name": "varsik",
+            "email": "varsikharutyunyan72@gmail.com",
+            "subject": "fff",
+            "message": "ss"
+        }
+    },
+    {
+        "model": "resume.message",
+        "pk": 3,
+        "fields": {
+            "full_name": "varsik",
+            "email": "varsikharutyunyan72@gmail.com",
+            "subject": "dd",
+            "message": "dd"
+        }
+    },
+    {
+        "model": "resume.message",
+        "pk": 4,
+        "fields": {
+            "full_name": "varsik",
+            "email": "varsikharutyunyan72@gmail.com",
+            "subject": "gg",
+            "message": "ff"
+        }
+    },
+    {
+        "model": "resume.message",
+        "pk": 5,
+        "fields": {
+            "full_name": "varsik",
+            "email": "varsikharutyunyan72@gmail.com",
+            "subject": "gg",
+            "message": "bb"
+        }
+    },
+    {
+        "model": "resume.portfolioproject",
+        "pk": 1,
+        "fields": {
+            "name": "Tic Tac Toe",
+            "image": "media/portfolio-1.jpg",
+            "short_description": "Game",
+            "description": "Game",
+            "category": "Game",
+            "client": "Children, Adults",
+            "url": "https://github.com/varsenikharutyunian/Python_Course/tree/main/tic_toc"
         }
     }
 ]
