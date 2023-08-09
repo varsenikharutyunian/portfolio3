@@ -37,6 +37,10 @@ class PersonalInfoAdmin(admin.ModelAdmin):
     list_display = ['name', 'surname', 'address', 'tel', 'email']
     list_filter = ['name']
     search_fields = ['name']
+    
+class PortfolioProjectAdmin(admin.ModelAdmin):
+    list_display = ["name", "short_description"]
+    search_fields = ["name", "short_description"]    
 
 
 # Register your models here.
@@ -49,7 +53,7 @@ admin.site.register(Service, ServicekAdmin)
 admin.site.register(Courses)
 admin.site.register(PersonalInfo)
 admin.site.register(Message)
-admin.site.register(PortfolioProject)
+admin.site.register(PortfolioProject,PortfolioProjectAdmin )
 
 
 

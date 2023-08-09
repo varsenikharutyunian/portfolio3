@@ -64,7 +64,7 @@ def home(request):
     testimonial = Testimonials.objects.all()
     personal_info = PersonalInfo.objects.get(user__username = "varsik")
     messageForm = MessageForm()
-    portfolio_project = PortfolioProject.objects.all()
+    portfolio_projects = PortfolioProject.objects.all()
     
     
     data={
@@ -97,7 +97,7 @@ def home(request):
         "testimonial": testimonial,
         "personal_info":personal_info,
         "messageForm": messageForm,
-        "portfolio_project": portfolio_project,
+        "portfolio_projects": portfolio_projects,
         }
     
     return render(request,"index.html",context=data,status=status)
