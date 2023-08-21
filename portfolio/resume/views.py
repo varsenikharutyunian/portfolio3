@@ -83,7 +83,7 @@ def home(request):
                                             
         # 'linkdin': 'https://www.linkedin.com/in/avagyani',
         # 'skype': 'https://join.skype.com/invite/M0yS4sB2gOvL',
-        "facebook": "https://www.facebook.com/varsenik.harutunyan",
+        "facebook": "https://www.facebook.com/varsenik.harutunyan/",
         "instagram": "https://www.instagram.com/varsenikharutunyan/",
         "text1":"Hello! It's wonderful to hear about your teaching experience as a physics and mathematics teacher since 1993 in Bazmaghbyur village. Congratulations on starting your journey in learning Python programming. Python is a versatile and popular programming language, and I'm sure it will open up new possibilities for you.",
         "text2": "I am a beginner Python programmer.",
